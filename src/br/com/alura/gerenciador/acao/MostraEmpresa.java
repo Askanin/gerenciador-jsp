@@ -26,7 +26,7 @@ public class MostraEmpresa implements Acao {
     	
     	request.setAttribute("empresa", empresa);
     	
-    	return "foward:formAlteraEmpresa.jsp";
+    	return "forward:formAlteraEmpresa.jsp";
 		
 		
 	}
