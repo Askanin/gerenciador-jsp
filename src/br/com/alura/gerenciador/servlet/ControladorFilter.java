@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -19,7 +20,14 @@ import br.com.alura.gerenciador.acao.Acao;
 //@WebFilter("/entrada")
 public class ControladorFilter implements Filter {
 
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
+	//Métodos necessários para usar o Jetty
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {}
+	    
+	@Override
+	public void destroy() {}
+		
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
 
     	System.out.println("ControladorFilter ");
     	HttpServletRequest request = (HttpServletRequest) servletRequest;
